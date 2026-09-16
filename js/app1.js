@@ -25,14 +25,42 @@ ant.addEventListener("click", anterior);
 
 function selecionar(e){
     e.preventDefault();
-    i = cbbox.value;
+    i = Number(cbbox.value);
     imagem.setAttribute("src",`./img/foto${i}.jpg`);
 }
 const cbbox = document.getElementById("combobox");
 cbbox.addEventListener("change", selecionar);
 
-function mudar(e, foto){
+const opacidade = document.getElementById("opacidade");
+opacidade.addEventListener("input", function(e){
     e.preventDefault();
-    i = foto;
-    imagem.setAttribute("src",`./img/foto${i}.jpg`);
-}
+    let valor = opacidade.value;
+    foto.setAttribute("style", `opacity:${valor}`);
+});
+
+const li1 = document.getElementById("li1");
+li1.addEventListener("mouseover", function(e){
+    e.preventDefault();
+    i = 1;
+    imagem.setAttribute("src", `./img/fotos${i}.jpg`);
+})
+
+const li2 = document.getElementById("li2");
+li2.addEventListener("mouseover", function(e){
+    e.preventDefault();
+    i = 2;
+    imagem.setAttribute("src", `./img/fotos${i}.jpg`);
+})
+
+const li3 = document.getElementById("li3");
+li3.addEventListener("mouseover", function(e){
+    e.preventDefault();
+    i = 3;
+    imagem.setAttribute("src", `./img/fotos${i}.jpg`);
+})
+
+
+
+
+
+
